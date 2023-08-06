@@ -1,0 +1,28 @@
+void intersecao(Item *raizA, Item *raizB, Lista *lista)
+{    
+     Lista *aux = malloc(sizeof(Lista));
+     if (raizA == NULL || raizB == NULL){
+          return;
+     }
+     else{
+               int retorno = strcmp(raizA->produto,raizB->produto);
+               if(retorno == 0){//sao iguais
+                    strcpy(aux->produto,raizB->produto);
+                    aux->quantidade = raizB->quantidade;
+                    aux->proximo = NULL;//arrumar
+                    return;
+               }
+               else{
+               if(retorno>0){//primeira string é maior(vem depois)
+                    intersecao(raizA,raizB->direito,lista);
+               }
+               if (retorno<0){
+                    intersecao(raizA,raizB->esquerdo,lista);
+               }
+          }  
+          
+      
+          
+     }
+     
+     }

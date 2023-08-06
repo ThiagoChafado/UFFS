@@ -1,0 +1,11 @@
+def consultaProduto(codigo_produto):#funcao para consultar produto
+    posicao=0
+    codigo_produto=str(input("Digite o código do produto: "))
+    for c in range(len(lista_codigos)):
+        for j in range(c):
+            if codigo_produto in lista_codigos[c]:
+                posicao = c
+                break
+            break
+    return posicao
+                

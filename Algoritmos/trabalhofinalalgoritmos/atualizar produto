@@ -1,0 +1,29 @@
+def atualizarProduto(codigo_produto):#Chamando função de uma função
+    codigo = consultaindice(codigo_produto)
+
+    print("O que deseja atualizar?")
+    print("Digite 1 para atualizar nome ")
+    print("Digite 2 para atualizar o tipo ")
+    print("Digite 3 para atualizar o preço ")
+    print("Digite 4 para atualizar a disponibilidade ")
+    x = int(input())
+    if x == 1:
+        novonome=str(input("Digite o novo nome: "))
+        lista_nomes[codigo] = novonome
+    if x == 2:
+        novotipo=int(input("Digite o novo tipo: "))
+        if novotipo == 1:
+            lista_tipos[codigo] = "Série"
+        elif novotipo == 2:
+            lista_tipos[codigo] = "Filme"
+        elif novotipo == 3:
+            lista_tipos[codigo] = "Documentário"
+    if x == 3:
+        novopreco=float(input("Digite o novo preço: "))
+        lista_precos[codigo] = novopreco
+    if x ==4:
+        novadisponibilidade = str(input("Digite a nova disponibilidade(1 para disponível e 2 para indisponível): "))
+        if novadisponibilidade == '1':
+            lista_disponivel[codigo] = "Disponível"
+        elif novadisponibilidade == '2':
+            lista_disponivel[codigo] = "Indisponível"

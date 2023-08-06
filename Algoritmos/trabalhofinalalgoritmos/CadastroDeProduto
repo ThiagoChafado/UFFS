@@ -1,0 +1,22 @@
+def cadastroDeProduto(codigo_produto,nome_produto,tipo_produto,preco_produto,disponivel):#funcao para cadastro produto
+    codigo_produto=str(input("Digite o código do produto: "))
+    while codigo_produto in lista_codigos:#enquanto o codigo ja estiver na lista,pedir para digitar um valor válido
+        codigo_produto=str(input("O código já existe,digite outro valor"))
+    lista_codigos.append(codigo_produto)
+    nome_produto=str(input("Digite o nome do produto: "))
+    lista_nomes.append(nome_produto)
+    tipo_produto=int(input("Digite o tipo (1 para série,2 para filme e 3 para documentário): "))
+    if tipo_produto==1:
+        lista_tipos.append("Série")
+    elif tipo_produto==2:
+        lista_tipos.append("Filme")
+    elif tipo_produto==3:
+        lista_tipos.append("Documentário")
+    preco_produto=float(input("Digite o preço do produto: "))
+    lista_precos.append(preco_produto)
+    disponivel=str(input("O produto pode ser vendido?(Digite 1 para sim e 2 para não): "))
+    if disponivel=='1':
+        lista_disponivel.append("Disponível")
+    elif disponivel=="2":
+        lista_disponivel.append("Indisponível")
+    print("Cadastro realizado com sucesso!")
