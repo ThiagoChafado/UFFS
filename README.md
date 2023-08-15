@@ -1,1 +1,1 @@
-Repositório contendo todos os trabalhos da faculdade de Ciência da Computação-UFFS
+Repositório contendo todos os trabalhos da graduação em Ciência da Computação-UFFS
