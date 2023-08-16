@@ -1,1 +1,2 @@
-Esse repositório contem apenas as funções de exercicios resolvidos do leetcode, sem a funcao main
+
+This folder contains only the functions from leetcode's solved exercises, without the main function
