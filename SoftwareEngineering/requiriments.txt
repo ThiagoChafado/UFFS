@@ -1,0 +1,10 @@
+Possíveis telas:                  | Usúario que acessa:
+ - Cadastro de pacientes          | Funcionário
+ - Cadastro de funcionários       | Administrador
+ - Cadastro de médico             | Administrador
+ - Consulta de paciente           | Médico/Funcionário
+ - Ficha médica                   | Médico
+ - Login                          | Paciente
+ - Alterar info. da consulta      | Funcionário
+ - Monitoramento de pacientes     | Médico
+ - Relatórios                     | Médico/Administrador
