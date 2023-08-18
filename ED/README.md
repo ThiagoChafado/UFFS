@@ -1,1 +1,1 @@
-Repository containing Data structures works
+Repository containing Data structures projects

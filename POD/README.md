@@ -1,1 +1,1 @@
-Repositorio containing POD works
+Repositorio containing POD projects

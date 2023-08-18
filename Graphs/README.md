@@ -1,1 +1,1 @@
-Repositorio containing Graphs works
+Repositorio containing Graphs projects

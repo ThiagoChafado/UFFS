@@ -1,1 +1,1 @@
-Folder containing SE works
+Folder containing SE projects

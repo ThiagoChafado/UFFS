@@ -1,1 +1,1 @@
-Repositorio containing Prog2  works
+Repositorio containing Prog2 projects
