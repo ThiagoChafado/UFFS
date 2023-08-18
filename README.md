@@ -1,1 +1,1 @@
-Repository containing all undergraduate work in Computer Science-UFFS
+Repository containing all undergraduate projects in Computer Science-UFFS
