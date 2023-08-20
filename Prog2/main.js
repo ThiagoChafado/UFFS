@@ -1,5 +1,11 @@
-let var1 =1 ;
-console.log("Hello World!"+var1);
-let i = 0
+let number = parseInt(prompt("Number"));
+
+
+
+
+for(let i =number;i<=number+10;i++){
+    number = number + 1;
+}
+alert(number);
 
 

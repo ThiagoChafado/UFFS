@@ -1,0 +1,54 @@
+*Primeira Geração 
+ - Grafos
+ - Obsoleto
+ - Compliado de adicionar/remover dados
+
+*Segunda Geração
+ - Relacional
+ - Tabelados
+ - Dados convencionais
+
+*Terceira Geração
+ - NoSQL
+ - Resolver problema com BigData
+ - Orientado a documentos
+   - Json,XML
+ - Dados não convencionais
+ - Flexível
+ - Transações longas
+ - Controle de versões
+ - Grande volume de dados
+ - 
+
+*Big Data
+ - Conkunto de problemas e suas soluções tecnológicas em computação
+para tratar certos tipos de dados
+ - Volumosos
+ - 3V's:Volumosos,variados e velozes
+ 
+*SGBD
+ - Arquitetura três-camadas(ANSI/SPARC)
+	- Visão externa(Usuário)
+	- Esquema conceitual(Desenvolvedor)
+	- Esquema interno(DBA)
+	- Vantagem de poder alterar camada sem alterar outro conceito
+ - Banco garante integridade semântica
+ - Backup
+ - Segunrança
+ - Desempenho
+ - Concorrência
+
+*ACID
+ - Atômica
+	- Ou vai até o fim, ou não vai
+ - Consistente
+	- Transação não pode gerar inconsistência no banco
+ - Isolada
+	- Transação não deve mudar outros locais
+	- Controlado pelo controlador de concorrência
+	- Cria tabela de bloqueio
+	- Caso tenha conflito, mais antiga encerra mais nova
+	ou mais nova se fecha
+ - Duradoura
+	- Garantido pelo registro de log e recuperação
+	
