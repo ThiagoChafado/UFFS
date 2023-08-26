@@ -1,7 +1,7 @@
 let value = 1;
 let validNumbers = 0;
 let numbers=0;
-while(value>=0){
+while(true){
 
     let value = parseInt(prompt("Digite um número(0 ou menor encerra a digitação):"));
     if (value <=0){
