@@ -3,6 +3,13 @@
 
 using namespace std;
 
+int Graph::get_vertices(){
+    return num_vertices_;
+}
+int Graph::get_aresta(){
+    return num_arestas_;
+}
+
 Graph::Graph(int num_vertices) {
     num_vertices_ = num_vertices;
     num_arestas_ = 0;
@@ -13,7 +20,7 @@ Graph::Graph(int num_vertices) {
 }
 
 void Graph::insert_aresta(Aresta e){
-    if(matriz_adj_[e.v1][e.v2] == 0 ){
+    if(matriz_adj_[e.v1][e.v2] == 0 && (e.v1 != e.v2)){
         matriz_adj_[e.v1][e.v2] = 1;
         matriz_adj_[e.v2][e.v1] = 1;
         num_arestas_++;
