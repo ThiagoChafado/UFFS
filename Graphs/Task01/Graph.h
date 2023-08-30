@@ -10,7 +10,8 @@
 #ifndef GRAPH_H
 
 #define GRAPH_H
-
+#include <vector>
+#include <list>
 #include "Edge.h"
 
 class Graph {
@@ -19,13 +20,14 @@ public:
     // ~Graph(); // Se necessario
     int get_vertices();
     int get_Edges();
-    void insert_Edge(Edge e);
-    void remove_Edge(Edge e);
+    void insert_edge(Edge e);
+    void remove_edge(Edge e);
     void remove_vertex(int v);
     void print();
 private:
     int num_vertices_;
     int num_edges_;
+    std::vector<std::list<int>>adj_list_;
 };
 
 #endif /* GRAPH_H */
