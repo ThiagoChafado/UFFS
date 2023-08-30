@@ -7,9 +7,19 @@
  * Matricula: 2211100023
  */
 
-int main() {
+#include "Graph.h"
 
-    /* Complete aqui */
+int main() {
+    Graph graph(5);
+
+    graph.insert_edge(Edge(1,3));
+    graph.insert_edge(Edge(1,1));
+    
+    
+
+    graph.print();
+    
+    
 
     return 0;
 }
