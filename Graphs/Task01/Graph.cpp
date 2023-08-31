@@ -31,20 +31,34 @@ void Graph::insert_edge(Edge e){
     //checks if there is a loop
    if(e.v1 == e.v2){
         return;
-   }
+   }//iterates over the list
     for (std::list<int>::iterator i = adj_list_[e.v1].begin();i != adj_list_[e.v1].end();i++){
-        //checks if not already in list
+        //checks if not already in list using pointer to the element of i
         if (*i == e.v2){
             return;
         }
     }
     adj_list_[e.v1].push_front(e.v2); 
     adj_list_[e.v2].push_front(e.v1);
+    num_edges_++;
 
 }
 
 void Graph::remove_edge(Edge e){
-    
+    int flag = 0;
+    for(std::list<int>::iterator i = adj_list_[e.v1].begin();i != adj_list_[e.v1].end();i++){
+        //checking if exists
+        if(*i == e.v2){
+            //whithout a flag, i got segmentation error,don't know why
+            flag = 1;
+        }
+    }
+    if (flag ==1 ){
+        //removes
+        adj_list_[e.v1].remove(e.v2);
+        adj_list_[e.v2].remove(e.v1);
+        num_edges_--;
+    }
 }
 
 void Graph::print(){
