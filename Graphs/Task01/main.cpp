@@ -11,22 +11,41 @@
 using namespace std;
 
 int main() {
-    Graph graph(5);
+    int vertices,operations;
+    cin >> vertices >> operations;
+    Graph graph(vertices);
+    int i=0;
+    while (i<operations){
+        int x,y;
+        char option;
+        cin >> option;
+        switch (option)
+        {
+        case 'I':
+            cin >> x >> y;
+            graph.insert_edge(Edge(x,y));
+            break;
+        case 'R':
+            cin >> x >> y;
+            graph.remove_edge(Edge(x,y));
+            break;
+        case 'E':
+            cout << graph.get_Edges() << "\n";
+            break;
+        case 'N':
+            cout << graph.get_vertices()<<"\n";
+            break;
+        case 'P':
+            graph.print();
+            break;
+        case 'Q':
+            //blabla
+        default:
+            break;
+        }
 
-    graph.insert_edge(Edge(1,3));
-    graph.insert_edge(Edge(1,1));
-    graph.insert_edge(Edge(1,4));
-    graph.remove_edge(Edge(1,3));
-    
-
-    
-    
-
-    graph.print();
-
-    cout << "Vertices:" << graph.get_vertices() << "\n";
-    cout << "Edges:" << graph.get_Edges() << "\n";
-    
+        i++;
+    }
     
 
     return 0;
