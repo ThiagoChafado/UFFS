@@ -12,6 +12,7 @@
 
 using namespace std;
 
+//getters
 int Graph::get_vertices(){
     return num_vertices_;
 }
@@ -59,6 +60,24 @@ void Graph::remove_edge(Edge e){
         adj_list_[e.v2].remove(e.v1);
         num_edges_--;
     }
+}
+void Graph::remove_vertex(int vertex){
+    
+    for(std::list<int>::iterator i = adj_list_[vertex].begin(); i != adj_list_[vertex].end();i++){
+        adj_list_[*i].remove(vertex);
+    }
+    adj_list_.resize(num_vertices_--);
+    
+    for (int i = 0; i < adj_list_.size()-1; i++){
+        for (std::list<int>::iterator j = adj_list_[i].begin(); j != adj_list_[i].end(); j++)
+            if (*j >= vertex){
+                *j = *j - 1;
+            }
+    }
+    for (int i = vertex; i < adj_list_.size() - 1; i++){
+        adj_list_[i] = adj_list_[i + 1];
+    }
+
 }
 
 void Graph::print(){

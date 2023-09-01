@@ -39,6 +39,9 @@ int main() {
             graph.print();
             break;
         case 'Q':
+            cin >> x;
+            graph.remove_vertex(x);
+            break;
             //blabla
         default:
             break;
