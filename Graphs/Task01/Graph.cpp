@@ -65,17 +65,20 @@ void Graph::remove_vertex(int vertex){
     
     for(std::list<int>::iterator i = adj_list_[vertex].begin(); i != adj_list_[vertex].end();i++){
         adj_list_[*i].remove(vertex);
+        num_edges_--;
     }
-    adj_list_.resize(num_vertices_--);
     
-    for (int i = 0; i < adj_list_.size()-1; i++){
-        for (std::list<int>::iterator j = adj_list_[i].begin(); j != adj_list_[i].end(); j++)
-            if (*j >= vertex){
-                *j = *j - 1;
-            }
+    
+    for (int i = vertex + 1; i < adj_list_.size(); i++){
+        adj_list_[i-1] = adj_list_[i];
     }
-    for (int i = vertex; i < adj_list_.size() - 1; i++){
-        adj_list_[i] = adj_list_[i + 1];
+    adj_list_.resize(--num_vertices_);
+
+    for (int i = 0; i < adj_list_.size(); i++){
+        for (std::list<int>::iterator j = adj_list_[i].begin(); j != adj_list_[i].end(); j++){
+            if (*j > vertex)
+                *j = *j - 1;
+        }
     }
 
 }
