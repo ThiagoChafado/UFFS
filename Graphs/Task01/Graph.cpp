@@ -62,18 +62,18 @@ void Graph::remove_edge(Edge e){
     }
 }
 void Graph::remove_vertex(int vertex){
-    
+    //remove the vertex
     for(std::list<int>::iterator i = adj_list_[vertex].begin(); i != adj_list_[vertex].end();i++){
         adj_list_[*i].remove(vertex);
         num_edges_--;
     }
     
-    
+    //realoc the list
     for (int i = vertex + 1; i < adj_list_.size(); i++){
         adj_list_[i-1] = adj_list_[i];
     }
     adj_list_.resize(--num_vertices_);
-
+    //decreases 1 to every node < then removed
     for (int i = 0; i < adj_list_.size(); i++){
         for (std::list<int>::iterator j = adj_list_[i].begin(); j != adj_list_[i].end(); j++){
             if (*j > vertex)
