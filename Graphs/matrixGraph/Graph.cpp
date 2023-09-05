@@ -71,11 +71,11 @@ void Graph::connected(){
             vector<int> marked(num_vertices_);
             marked.assign(num_vertices_,0);
             if (!path(i,j,marked)){
-                cout << "False";
+                cout << "Not connected\n";
                 return;
             }
         }
     }
-    cout << "True";
+    cout << "Connected\n";
     return;
 }
