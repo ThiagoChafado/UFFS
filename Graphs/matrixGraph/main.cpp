@@ -1,5 +1,5 @@
-#include "graph.h"
-#include "aresta.h"
+#include "Graph.h"
+#include "Edge.h"
 #include <iostream>
 
 using namespace std;
