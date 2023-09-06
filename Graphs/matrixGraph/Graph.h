@@ -28,8 +28,8 @@ public:
 /*Checks if the graph is connected*/
     void connected();
 
-/*Checks if the graph is cyclic, return 1 for true or 0 to false*/
-    int cyclic();
+/*Checks if the graph is acyclic, return 1 for true or 0 to false*/
+    int acyclic();
 
 private:
     int num_vertices_;

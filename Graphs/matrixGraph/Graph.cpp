@@ -80,7 +80,7 @@ void Graph::connected(){
     return;
 }
 
-int Graph::cyclic(){
+int Graph::acyclic(){
     int result = 1;
     for (int i = 0;i < num_vertices_;i++){
         for (int j = 0;j< i-1;j++){
