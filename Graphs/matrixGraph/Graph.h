@@ -28,8 +28,9 @@ public:
 /*Checks if the graph is connected*/
     void connected();
 
-/*NOT COMPLETE-Checks if the graph is cyclic*/
-    void cyclic();
+/*Checks if the graph is cyclic, return 1 for true or 0 to false*/
+    int cyclic();
+
 private:
     int num_vertices_;
     int num_edges_;

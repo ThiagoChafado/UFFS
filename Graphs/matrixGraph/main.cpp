@@ -20,6 +20,7 @@ int main(){
         graph.print();
         int v = graph.path(2,1,marked);
         graph.connected();
+        cout << graph.cyclic() << "\n";
 
     }catch (const exception &e){
         cerr << "exception: " << e.what() << "\n";

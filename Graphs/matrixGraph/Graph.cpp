@@ -79,3 +79,21 @@ void Graph::connected(){
     cout << "Connected\n";
     return;
 }
+
+int Graph::cyclic(){
+    int result = 1;
+    for (int i = 0;i < num_vertices_;i++){
+        for (int j = 0;j< i-1;j++){
+            remove_edge(Edge(i,j));
+            vector<int> marked(num_vertices_);
+            marked.assign(num_vertices_,0);
+            if (path(i,j,marked)){
+                result = 0;
+                
+            }
+            insert_edge(Edge(i,j));
+        }
+    }
+    
+    return result;
+}
