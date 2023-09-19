@@ -21,6 +21,7 @@ int main(){
         int v = graph.path(2,1,marked);
         graph.connected();
         cout << graph.acyclic() << "\n";
+        graph.deepFirstSearch(0,marked);
         
 
     }catch (const exception &e){
