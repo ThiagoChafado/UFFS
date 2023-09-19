@@ -4,6 +4,7 @@
 
 #include <vector>
 #include "Edge.h"
+#include <stack>
 
 class Graph {
 public:
@@ -31,8 +32,12 @@ public:
 /*Checks if the graph is acyclic, return 1 for true or 0 to false*/
     int acyclic();
 
-/*Deep first search with marked vector*/
+/*Deep first search with only marked vector*/
     void deepFirstSearch(int v, std::vector<int> marked);
+
+/*Deep first search with stack*/
+    void dfsWithStack(int v);
+
 
 private:
     int num_vertices_;

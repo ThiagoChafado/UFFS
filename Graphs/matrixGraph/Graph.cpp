@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include <iostream>
 
+
 using namespace std;
 
 int Graph::get_vertices()
@@ -119,11 +120,33 @@ int Graph::acyclic()
     return answer;
 }
 
-void Graph::deepFirstSearch(int v, vector<int> marked){
+void Graph::deepFirstSearch(int v, vector<int> marked)
+{
     printf("%d\n", v);
     marked[v] = 1;
     for (int u = 0; u < num_vertices_; u++)
         if (adj_matrix_[v][u] != 0)
             if (marked[u] == 0)
                 deepFirstSearch(u, marked);
+}
+
+void Graph::dfsWithStack(int v){
+    vector<int> marked(num_vertices_);
+    marked.assign(num_vertices_, 0);
+    stack<int> stack;
+    stack.push(v);
+    while (!stack.empty())
+    {
+        int w = stack.top();
+        stack.pop();
+        if (marked[w] == 0)
+        {
+            printf("%d\n", w);
+            marked[w] = 1;
+            for (int u = (num_vertices_ - 1); u >= 0; u--)
+                if (adj_matrix_[w][u] != 0)
+                    if (marked[u] == 0)
+                        stack.push(u);
+        }
+    }
 }
