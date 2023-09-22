@@ -49,7 +49,7 @@ void Graph::print()
     }
 }
 
-void Graph::breadthFirstSearch(int v, int father[], int dist[])
+void Graph::breadthFirstSearch(int v, vector<int> &father, vector<int> &dist)
 {
     vector<int> marked(num_vertices_);
     marked.assign(num_vertices_, 0);

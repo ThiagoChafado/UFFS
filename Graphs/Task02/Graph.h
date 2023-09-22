@@ -24,7 +24,7 @@ public:
 /*Prints a graph*/
     void print();
 
-    void breadthFirstSearch(int v, int father[], int dist[]);
+    void breadthFirstSearch(int v, std::vector<int> &father, std::vector<int> &dist);
 
 private:
     int num_vertices_;
