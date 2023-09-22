@@ -5,6 +5,7 @@
 #include <vector>
 #include "Edge.h"
 #include <stack>
+#include <queue>
 
 class Graph {
 public:
@@ -23,21 +24,7 @@ public:
 /*Prints a graph*/
     void print();
 
-/*Get 2 vertices and returns a boolean value if there is a path between the vertices*/
-    bool path(int v, int w, std::vector<int> marked);
-
-/*Checks if the graph is connected*/
-    bool connected();
-
-/*Checks if the graph is acyclic, return 1 for true or 0 to false*/
-    int acyclic();
-
-/*Deep first search with only marked vector*/
-    void deepFirstSearch(int v, std::vector<int> &marked);
-
-/*Deep first search with stack*/
-    void dfsWithStack(int v);
-
+    void breadthFirstSearch(int v, int father[], int dist[]);
 
 private:
     int num_vertices_;

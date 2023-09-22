@@ -17,11 +17,13 @@ int main(){
         //graph.insert_edge(Edge (1,2));
         graph.insert_edge(Edge (2,3));
         graph.insert_edge(Edge (2,4));
-        graph.print();
-        int v = graph.path(2,1,marked);
-        graph.connected();
-        cout << graph.acyclic() << "\n";
-        graph.deepFirstSearch(0,marked);
+        //graph.print();
+        //int v = graph.path(2,1,marked);
+        (graph.connected() ) ? cout << "YES\n" : cout << "NO\n";
+        (graph.acyclic()) ? cout << "YES\n" : cout << "NO\n";
+       // graph.deepFirstSearch(0,marked);
+        
+        
         
 
     }catch (const exception &e){

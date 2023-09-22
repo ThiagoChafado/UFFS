@@ -1,7 +1,6 @@
 #include "Graph.h"
 #include <iostream>
 
-
 using namespace std;
 
 int Graph::get_vertices()
@@ -78,23 +77,26 @@ bool Graph::path(int v, int w, vector<int> marked)
     return false;
 }
 
-void Graph::connected()
+bool Graph::connected()
 {
-    for (int i = 0; i < num_vertices_; i++)
+
+    vector<int> marked(num_vertices_);
+    marked.assign(num_vertices_, 0);
+    deepFirstSearch(0, marked);
+    int acumulator = 0;
+
+    for (int j = 0; j < num_vertices_; j++)
     {
-        for (int j = 0; j < i - 1; j++)
+        if (marked[j] == 1)
         {
-            vector<int> marked(num_vertices_);
-            marked.assign(num_vertices_, 0);
-            if (!path(i, j, marked))
-            {
-                cout << "Not connected\n";
-                return;
-            }
+            acumulator++;
         }
     }
-    cout << "Connected\n";
-    return;
+    if (acumulator == num_vertices_)
+    {
+        return true;
+    }
+    return false;
 }
 
 int Graph::acyclic()
@@ -120,9 +122,9 @@ int Graph::acyclic()
     return answer;
 }
 
-void Graph::deepFirstSearch(int v, vector<int> marked)
+void Graph::deepFirstSearch(int v, vector<int> &marked)
 {
-    printf("%d\n", v);
+    // printf("%d\n", v);
     marked[v] = 1;
     for (int u = 0; u < num_vertices_; u++)
         if (adj_matrix_[v][u] != 0)
@@ -130,7 +132,8 @@ void Graph::deepFirstSearch(int v, vector<int> marked)
                 deepFirstSearch(u, marked);
 }
 
-void Graph::dfsWithStack(int v){
+void Graph::dfsWithStack(int v)
+{
     vector<int> marked(num_vertices_);
     marked.assign(num_vertices_, 0);
     stack<int> stack;
