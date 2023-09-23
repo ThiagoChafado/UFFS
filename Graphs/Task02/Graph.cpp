@@ -1,3 +1,13 @@
+/*
+ * Tarefa 02 - Potenciais Comparsas
+ *
+ * GEN254 - Grafos - 2023/2
+ *
+ * Nome:      Thiago Chafado Almeida
+ * Matricula: 2211100023
+ */
+
+
 #include "Graph.h"
 #include <iostream>
 
@@ -33,26 +43,12 @@ void Graph::insert_edge(Edge e)
     }
 }
 
-void Graph::print()
-{
-    for (int i = 0; i < num_vertices_; i++)
-    {
-        cout << i << ":";
-        for (int j = 0; j < num_vertices_; j++)
-        {
-            if (adj_matrix_[i][j] != 0)
-            {
-                cout << " " << j;
-            }
-        }
-        cout << "\n";
-    }
-}
 
-void Graph::breadthFirstSearch(int v, vector<int> &father, vector<int> &dist)
+list<int> Graph::breadthFirstSearch(int v, vector<int> &father, vector<int> &dist)
 {
     vector<int> marked(num_vertices_);
     marked.assign(num_vertices_, 0);
+    list<int> companionsp;
     queue<int> queue;
     marked[v] =1;
     father[v] = -1;
@@ -62,7 +58,10 @@ void Graph::breadthFirstSearch(int v, vector<int> &father, vector<int> &dist)
     {
         int w = queue.front();
         queue.pop();
-        printf("%d\n", w);
+        if(dist[w] <= 3 && w != v){
+            companionsp.push_front(w);
+        }
+        
         for (int u = 0; u < num_vertices_; u++)
             if (adj_matrix_[w][u] != 0)
                 if (marked[u] == 0)
@@ -72,5 +71,7 @@ void Graph::breadthFirstSearch(int v, vector<int> &father, vector<int> &dist)
                     dist[u] = dist[w] + 1;
                     queue.push(u);
                 }
+
     }
+    return companionsp;
 }

@@ -1,3 +1,13 @@
+/*
+ * Tarefa 02 - Potenciais Comparsas
+ *
+ * GEN254 - Grafos - 2023/2
+ *
+ * Nome:      Thiago Chafado Almeida
+ * Matricula: 2211100023
+ */
+
+
 #ifndef EDGE_H
 
 #define EDGE_H

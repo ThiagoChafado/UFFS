@@ -1,3 +1,13 @@
+/*
+ * Tarefa 02 - Potenciais Comparsas
+ *
+ * GEN254 - Grafos - 2023/2
+ *
+ * Nome:      Thiago Chafado Almeida
+ * Matricula: 2211100023
+ */
+
+
 #include "Graph.h"
 #include "Edge.h"
 #include <iostream>
@@ -6,22 +16,41 @@ using namespace std;
 
 int main(){
     try{
-        
-        Graph graph(6);
-        vector<int> marked(6);
-        marked.assign(6,0);
-        vector<int> father(6);
-        vector<int> dist(6);
-        graph.insert_edge(Edge(2,5));
-        graph.insert_edge(Edge(0,4));
-        graph.insert_edge(Edge(3,5));
-        graph.insert_edge(Edge(1,3));
-        graph.insert_edge(Edge(0,5));
-        graph.insert_edge(Edge(2,4));
-        graph.breadthFirstSearch(4,father,dist);
+        int person,call;
+        cin >> person >> call;
+        Graph graph(person);
+        int i =0;
+        while(i<call){
+            int x,y;
+            char time;
+            cin >> x >> y >> time;
+            if (time == 'W'){
+                graph.insert_edge(Edge(x,y));
+            }
+            i++;
+        }
+        int timesSearch;
+        cin >> timesSearch;
+        i=0;
+        vector<int> father(person);
+        vector<int> dist(person);
+        while (i<timesSearch){
+            int bfs;
+            cin >> bfs;
+            list<int> companions;
+            companions = graph.breadthFirstSearch(bfs,father,dist);
+            //sort the linked list
+            companions.sort();
+
+            cout << bfs << ':';
+            for(auto i: companions){
+                cout << i << ' ';
+        }
+        cout << "\n";
+        i++;
 
 
-        
+        }
         
         
         
