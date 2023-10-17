@@ -1,0 +1,15 @@
+10)select p.nome,f.titulo from pessoa p LEFT join elenco e on p.codp=e.codp 
+LEFT join filme f on e.codf=f.codf order by nome;
+11)select p.nome frmo pessoa p left join elenco e on 
+p.codp=e.codp
+where e.codp in null
+12)select titulo,dur from filme where anol between 1961 and 1970;
+15)select count(coment) from avaliacao where email='cinefilo@yahoo.com';
+16)select paisn,count(codp) from pessoa group by paisn;
+17)select p.nome frmo pessoa p where dtnasc = (select min(dtnasc) from pessoa);
+18)select * from filme where dur = (select max(dur) from filme);
+media = select * from filme where dur = (select avg(dur) from filme);
+19)select f.titulo,count(e.codf) from filme f natural left join elenco e group by f.titulo;
+20)select f.titulo,coalesc(round(avg(a.nestrelas),2),'None') from filme f natural
+left join avaliacao a group by f.titulo;
+

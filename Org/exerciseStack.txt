@@ -1,0 +1,24 @@
+S = (a-c) * d/(c-b)
+push a
+push c
+sub <- top-1 - top
+push d
+mult <- top * top-1
+push c
+push b
+sub <- top-1 - top
+div <- top-1 / top
+
+---------------
+solution
+---------------
+push b
+push c
+sub 
+push d
+push c
+push a
+sub
+mul 
+div
+pop s
