@@ -1,0 +1,10 @@
+S = (A-C)*D/(C-B)
+
+movmw C
+sub B
+movwm aux
+movmw A
+sub C
+mul D
+div aux
+movwm S

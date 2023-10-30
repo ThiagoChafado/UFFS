@@ -1,0 +1,12 @@
+S=(A-C)*D/C-B
+
+load A,R2
+load B,R1
+sub R3,R2,R1
+load D,R4
+mul R5,R3,R4
+load C,R6
+load B,R7
+sub R8,R6,R7
+div R1,R5,R8
+store S,R1
