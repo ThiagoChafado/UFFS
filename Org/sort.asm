@@ -8,6 +8,7 @@ main:
 	la t0,tamanho
 	lw a1,0(t0)
 	call ordena
+	call print
 	li a7,10
 	ecall
 	
@@ -39,4 +40,20 @@ fim_laco_int:
 	j laco_ext
 fim_ordena:
 	ret
+	
+print:
+	li t0,0
+	
+compara:
+	bgt t0,a1,fim
+	addi t1,t0,1
+
+laco_print:
+	beq t1,a1,fim_print
+	slli s0,t0,2
+	add s0,a0,s0
+	lw s4,0(s0)
+	add a0,s4,zero
+	
+	
 	

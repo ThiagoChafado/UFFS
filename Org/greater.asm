@@ -2,7 +2,7 @@
 number:	.asciz 	"\n Type the value of N:"
 greater:.asciz "\n The greater is:" 
 smaller:.asciz "\n The smaller is:"
-avg:	.asciz "\n The avg is:"
+avg:	.asciz "\n The integer avg is:"
 	.text
 main:
 	li t3,0
