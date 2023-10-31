@@ -82,6 +82,11 @@ bool Graph::connected()
 
     vector<int> marked(num_vertices_);
     marked.assign(num_vertices_, 0);
+    for (int i = 0; i < num_vertices_; i++)
+    {
+        if (grade(i) == 0)
+            marked[i] = 1;
+    }
     deepFirstSearch(0, marked);
     int acumulator = 0;
 
@@ -152,4 +157,57 @@ void Graph::dfsWithStack(int v)
                         stack.push(u);
         }
     }
+}
+
+bool Graph::parity(int v)
+{
+    if (connected())
+    {
+
+        vector<int> marked(num_vertices_);
+        marked.assign(num_vertices_, 0);
+        stack<int> stack;
+        stack.push(v);
+        while (!stack.empty())
+        {
+            int pairs = 0;
+            int w = stack.top();
+            stack.pop();
+            if (marked[w] == 0)
+            {
+                marked[w] = 1;
+                for (int u = (num_vertices_ - 1); u >= 0; u--)
+                {
+                    if (adj_matrix_[w][u] != 0)
+                    {
+                        pairs++;
+                    }
+                    if (marked[u] == 0)
+                    {
+                        stack.push(u);
+                    }
+                    
+                }
+                if (pairs % 2 != 0)
+                    {
+                        return false;
+                    }
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+int Graph::grade(int v)
+{
+    int grade = 0;
+    for (int i = 0; i < num_vertices_; i++)
+    {
+        if (adj_matrix_[v][i] != 0)
+        {
+            grade++;
+        }
+    }
+    return grade;
 }

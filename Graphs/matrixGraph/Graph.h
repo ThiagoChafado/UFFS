@@ -29,11 +29,16 @@ public:
 /*Checks if the graph is connected*/
     bool connected();
 
+/*Checks parity*/
+    bool parity(int v);
+
 /*Checks if the graph is acyclic, return 1 for true or 0 to false*/
     int acyclic();
 
 /*Deep first search with only marked vector*/
     void deepFirstSearch(int v, std::vector<int> &marked);
+
+    int grade(int v);
 
 /*Deep first search with stack*/
     void dfsWithStack(int v);
