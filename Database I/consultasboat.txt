@@ -1,0 +1,21 @@
+select s.sname from sailor s natural join reserve r 
+where s.rating >2 group by s.sid 
+having count(*)=(select max(qtd) as mx 
+from (select s.sid,s.sname,count(r.sid) as qtd 
+from sailor s left join reserve r on s.sid=r.sid where s.rating > 2 group by
+ s.sid) as t); ---SEM CTE;
+
+COM CTE;
+with sailorr2 as(select sid,sname from 
+sailor where rating>2),reserveqt as(select count(*) as qt 
+from sailorr2 natural join reserve r group by r.sid),reservemx as
+(select max(qt) as my from reserveqt) 
+select s.sid,s.sname from sailorr2 s natural join reserve r
+ group by s.sid,s.sname 
+having count(*)=(select my from reservemx);
+
+
+cor de barco mais frequente
+select color from boat group by color having count(*)=(select max(qt)as mx from(select count(*)as qt from boat group by color)t);
+ color 
+-------
