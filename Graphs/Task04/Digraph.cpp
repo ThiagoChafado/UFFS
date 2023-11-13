@@ -1,5 +1,5 @@
 /*
- * Tarefa 02 - Potenciais Comparsas
+ * Tarefa 04 - Desbravo Bros
  *
  * GEN254 - Grafos - 2023/2
  *
@@ -40,6 +40,7 @@ void Digraph::insert_edge(Edge e)
     {
         adj_matrix_[e.v1][e.v2] = e.weight;
         num_edges_++;
+        
     }
 }
 

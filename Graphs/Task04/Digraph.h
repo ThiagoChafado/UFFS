@@ -1,5 +1,5 @@
 /*
- * Tarefa 02 - 
+ * Tarefa 04 - Desbravo Bros
  *
  * GEN254 - Grafos - 2023/2
  *
@@ -28,6 +28,8 @@ public:
 
 /*Inserts an edge into the digraph if the edge does not yet exist and is not a loop*/
     void insert_edge(Edge e);
+
+    int max_lifes(int v);
 
 private:
     int num_vertices_;

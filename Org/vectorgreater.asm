@@ -14,7 +14,7 @@ main:
 	
 	
 init:
-	#t1 -> x=0
+	#t0 -> x=0
 	li t0,0
 	
 for:

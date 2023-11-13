@@ -1,5 +1,5 @@
 /*
- * Tarefa 04 - 
+ * Tarefa 04 - Desbravo Bros
  *
  * GEN254 - Grafos - 2023/2
  *

@@ -1,0 +1,65 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo{
+    width: 200px;
+    height: 300px;
+    align-items: left;
+}
+h1{
+    color: #00693E;
+    font-family: 'Fira Sans', sans-serif;
+    font-variant: bold;
+}
+
+h2{
+    text-align: center;
+    color: white;
+    font-family: 'Fira Sans', sans-serif;
+    font-variant: bold;
+    background-color: #00693E;
+
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.list{
+    text-align: left;
+}
+.cursos{
+    text-align: center;
+}
+
+.cc1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.tg{
+
+    width: 800px;
+    height: 500px;
+    border-style: solid;
+    border-color: #00693E;
+    
+    
+    
+    
+}
+
+
+
+a{
+    text-decoration: none;
+}
