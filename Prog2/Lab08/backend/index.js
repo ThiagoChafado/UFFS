@@ -30,12 +30,12 @@ app.get("/cursos", async (req, res) => {
 
 app.post("/cursos", async (req, res) => {
     try {
-        const clienteNome = req.body.nome;
-        const clienteEmail = req.body.email;
-        console.log(`Nome: ${clienteNome} - Email: ${clienteEmail}`);
+        const classname1 = req.body.classname;
+        const descr = req.body.descr;
+        console.log(`classname: ${classname1} - descr: ${descr}`);
         db.none(
             "INSERT INTO class (classname, descr) VALUES ($1, $2);",
-            [clienteNome, clienteEmail]
+            [classname1, descr]
         );
         res.sendStatus(200);
     } catch (error) {

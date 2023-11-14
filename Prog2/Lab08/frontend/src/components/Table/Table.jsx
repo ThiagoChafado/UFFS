@@ -7,12 +7,12 @@ import { DataGrid } from "@mui/x-data-grid";
 const colunas = [
     { field: "id", headerName: "ID", width: 90 },
     { field: "classname", headerName: "Nome", width: 180 },
-    { field: "descr", headerName: "Email", width: 180 },
+    { field: "descr", headerName: "Descrição", width: 180 },
 ];
 
 function Clientes() {
     const [nome, setNome] = React.useState("");
-    const [email, setEmail] = React.useState("");
+    const [descr, setDescr] = React.useState("");
 
     const [openMessage, setOpenMessage] = React.useState(false);
     const [messageText, setMessageText] = React.useState("");
@@ -36,12 +36,12 @@ function Clientes() {
 
     function clearForm() {
         setNome("");
-        setEmail("");
+        setDescr("");
     }
 
     function handleCancelClick() {
-        if (nome !== "" || email !== "") {
-            setMessageText("Cadastro de cliente cancelado!");
+        if (nome !== "" || descr !== "") {
+            setMessageText("Cadastro de curso cancelado!");
             setMessageSeverity("warning");
             setOpenMessage(true);
         }
@@ -49,26 +49,26 @@ function Clientes() {
     }
 
     async function handleSubmit() {
-        if (nome !== "" && email !== "") {
+        if (nome !== "" && descr !== "") {
             try {
                 await axios.post("/cursos", {
                     classname: nome,
-                    descr: email,
+                    descr: descr,
                 });
-                console.log(`Nome: ${nome} - Email: ${email}`);
-                setMessageText("Cliente cadastrado com sucesso!");
+                console.log(`Nome: ${nome} - Descrição: ${descr}`);
+                setMessageText("Curso cadastrado");
                 setMessageSeverity("success");
                 clearForm(); // limpa o formulário apenas se cadastrado com sucesso
             } catch (error) {
                 console.log(error);
-                setMessageText("Falha no cadastro do cliente!");
+                setMessageText("Falha no cadastro do Curso!");
                 setMessageSeverity("error");
             } finally {
                 setOpenMessage(true);
                 await getData();
             }
         } else {
-            setMessageText("Dados de cliente inválidos!");
+            setMessageText("Dados de Curso inválidos!");
             setMessageSeverity("warning");
             setOpenMessage(true);
         }
@@ -96,10 +96,10 @@ function Clientes() {
                     <TextField
                         required
                         id="email-input"
-                        label="E-mail"
+                        label="Descrição"
                         size="small"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
+                        onChange={(e) => setDescr(e.target.value)}
+                        value={descr}
                     />
                 </Stack>
                 <Stack direction="row" spacing={3}>
