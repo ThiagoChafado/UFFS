@@ -44,3 +44,36 @@ void Digraph::insert_edge(Edge e)
     }
 }
 
+int Digraph::breadthFirstSearch(int v, vector<int> &father, vector<int> &dist)
+{
+    int count = 0;
+    int maxLife = 0;
+    vector<int> marked(num_vertices_);
+    marked.assign(num_vertices_, 0);
+    queue<int> queue;
+    marked[v] = 1;
+    father[v] = __INT_MAX__;
+    dist[v] = 0;
+    queue.push(v);
+    while (!queue.empty())
+    {
+        int w = queue.front();
+        queue.pop();
+        
+        for (int u = 0; u < num_vertices_; u++)
+            if (adj_matrix_[w][u] != __INT_MAX__)
+                if (marked[u] == 0)
+                {
+                    marked[u] = 1;
+                    father[u] = w;
+                    dist[u] = dist[w] + 1;
+                    count = count + adj_matrix_[w][u];
+                    if (count <= maxLife){
+                        maxLife = count;
+                    }
+                    queue.push(u);
+                }
+
+    }
+    return maxLife * -1;
+}

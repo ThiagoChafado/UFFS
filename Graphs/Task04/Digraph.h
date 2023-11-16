@@ -31,6 +31,7 @@ public:
 
     int max_lifes(int v);
 
+    int breadthFirstSearch(int v, std::vector<int> &father, std::vector<int> &dist);
 private:
     int num_vertices_;
     int num_edges_;

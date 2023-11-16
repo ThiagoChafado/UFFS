@@ -24,7 +24,19 @@ int main(){
         while(i<c){
             int x,y,d;
             cin >> x >> y >> d;
-            digraph.insert_edge(Edge(x,y,d));
+            digraph.insert_edge(Edge(x,y,d*-1));
+            i++;
+        }
+        int executions;
+        cin >> executions;
+        i=0;
+        while(i<executions){
+            vector<int> father(r);
+            vector<int> dist(r);
+            int vertex;
+            cin >> vertex;
+            int max = digraph.breadthFirstSearch(vertex,father,dist);
+            cout << vertex << ":" << max << "\n";
             i++;
         }
         
