@@ -24,6 +24,7 @@ int main(){
         while(i<c){
             int x,y,d;
             cin >> x >> y >> d;
+            //inserts the edge with the value * -1
             digraph.insert_edge(Edge(x,y,d*-1));
             i++;
         }
@@ -31,12 +32,19 @@ int main(){
         cin >> executions;
         i=0;
         while(i<executions){
-            vector<int> father(r);
-            vector<int> dist(r);
+            vector<int> father(digraph.get_vertices());
+            father.assign(digraph.get_vertices(), 0);
+            vector<int> dp(digraph.get_vertices());
+            dp.assign(digraph.get_vertices(), 0);
             int vertex;
             cin >> vertex;
-            int max = digraph.breadthFirstSearch(vertex,father,dist);
-            cout << vertex << ":" << max << "\n";
+            bool verify = digraph.bellmanFord(vertex,father,dp);
+            if (verify == false){
+                cout << vertex <<":" <<" ilimitada\n";
+            }else{
+                int max = digraph.maxLife(vertex);
+                cout << vertex << ": " << max << "\n";
+            }
             i++;
         }
         

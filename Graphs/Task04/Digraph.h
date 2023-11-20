@@ -29,9 +29,12 @@ public:
 /*Inserts an edge into the digraph if the edge does not yet exist and is not a loop*/
     void insert_edge(Edge e);
 
-    int max_lifes(int v);
+/*Solution*/
+    int maxLife(int v);
+/*Bellman-Ford*/
+    bool bellmanFord(int s,std::vector<int> &father,std::vector<int> &dp);
 
-    int breadthFirstSearch(int v, std::vector<int> &father, std::vector<int> &dist);
+    bool acyclic();//?
 private:
     int num_vertices_;
     int num_edges_;
