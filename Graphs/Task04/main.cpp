@@ -39,19 +39,28 @@ int main(){
             int vertex;
             cin >> vertex;
             bool verify = digraph.bellmanFord(vertex,father,dp);
+            
             if (verify == false){
                 cout << vertex <<":" <<" ilimitada\n";
             }else{
-                int max = digraph.maxLife(vertex);
-                cout << vertex << ": " << max << "\n";
+                 int x = 0;
+                    for(int i =0;i < dp.size();i++){
+                        if(dp[i]>=x){
+                            x=dp[i];
+                        }
+                    }
+                
+                //int max = digraph.maxLife(vertex);//Can be used bfs,but don't pass in one test :P
+                cout << vertex << ": " << x << "\n";
             }
             i++;
+        
+        
+        
+        
         }
-        
-        
-        
-
-    }catch (const exception &e){
+        }
+        catch (const exception &e){
         cerr << "exception: " << e.what() << "\n";
     }
 return 0;

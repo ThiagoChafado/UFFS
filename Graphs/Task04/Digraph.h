@@ -29,9 +29,9 @@ public:
 /*Inserts an edge into the digraph if the edge does not yet exist and is not a loop*/
     void insert_edge(Edge e);
 
-/*Solution*/
+//Can be used a bfs,but don't pass in one case :P
     int maxLife(int v);
-/*Bellman-Ford*/
+/*Bellman-Ford    -    The real answer*/
     bool bellmanFord(int s,std::vector<int> &father,std::vector<int> &dp);
 
     bool acyclic();//?

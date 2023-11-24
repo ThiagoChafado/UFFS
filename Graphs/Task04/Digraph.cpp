@@ -42,6 +42,8 @@ void Digraph::insert_edge(Edge e)
     }
 }
 
+
+//Can be used a bfs,but don't pass in one case :P
 int Digraph::maxLife(int v)
 {
     int count = 0;
@@ -86,8 +88,8 @@ bool Digraph::bellmanFord(int s,vector<int> &father,vector<int> &dp){
         for(int u=0;u<num_vertices_;u++){
             for(int v=0;v<num_vertices_;v++){
                 if(adj_matrix_[u][v] != __INT_MAX__){
-                    if (dp[u] != __INT_MAX__ && dp[v] > dp[u] + adj_matrix_[u][v]){
-                    dp[v] = dp[u] + adj_matrix_[u][v];
+                    if (dp[u] != __INT_MAX__ && adj_matrix_[u][v] != __INT_MAX__ && dp[v] > dp[u] + adj_matrix_[u][v]){
+                    dp[v] = dp[u] + (adj_matrix_[u][v]);
                     father[v] = u;
                     }
                 }
@@ -104,6 +106,10 @@ bool Digraph::bellmanFord(int s,vector<int> &father,vector<int> &dp){
                 }  
             }
         }
+    }
+
+    for(int i=0;i<dp.size();i++){
+        dp[i] = dp[i] * -1;
     }
     return true;
 }
