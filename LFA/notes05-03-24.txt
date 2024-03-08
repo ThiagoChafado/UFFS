@@ -1,0 +1,151 @@
+Definição: Descreve objetos ou conceitos - ex: Definição de um conjunto ,de um
+grafo.
+
+Sentença matemática: Expressa que um objeto tem uma certa propriedade - Uma
+sentença pode ser verdadeira ou falsa.
+
+Prova:Uma argumentação lógica convincente de que uma sentença é verdadeira
+
+Teorema: Uma sentença matematica que é verdadeira
+
+*Estratégias de prova
+
+-Prova dedutiva: uma sequencia de passos que levam de uma sentença inicial
+chamada de hipótese e uma sentença final, chamada de conclusão.
+"Se H,então C" onde H é a hipotese e C é a conclusão.
+EX:Se x e y são inteiros pares,então o produto xy é um termo par
+H='x e y inteiros pares'
+C='produto xy é inteiro par'.
+Prova(dedutiva):
+
+-----------------------------------------------------------------------
+	Sentença		|	Justificativa
+-----------------------------------------------------------------------
+(1)x e y são inteiros pares	|	Hipótese
+(2)x=2n p/ algum inteiro n	|	Hipótese e def. de inteiro par
+(3)y=2m p/ algum inteiro n	|	Hipótese e def. de inteiro par
+(4)xy=(2n)*(2m)			|       Def. de multiplicação,(2) e (3)
+(5)xy=2(n2m),onde n2m é um	|	Prop.Aritméticas e (4)
+inteiro				|
+(6)xy é inteiro par		|	Def. de número par e (5)
+-----------------------------------------------------------------------
+
+EX:
+Teorema: se x é a soma dos quadrados de 4 inteiros positivos,então 2^x >= x²
+
+-----------------------------------------------------------------------
+	Sentença		|	Justificativa
+-----------------------------------------------------------------------
+(1)x=a²+b²+c²+d²		|	Hipótese
+(2)a>=1,b>=1,c>=1,d>=1		|	Hipótese
+(3)a²>=1,b²>=1,c²>=1,d²>=1	|	(2) e propriedades aritméticas
+(4)x>=4				|	(1),(3)  e propriedades 
+				|	Aritméticas
+(5)2^x>=x²			|	(4) e o teorema:Se x>=4,então
+				|	2^x>=x²
+-----------------------------------------------------------------------
+
+Outra forma correta:
+Seja x = 2m e y = 2n,para inteiros m e n.Então, xy = (2m)(2n) = 2(2mn).
+Como 2mn é um inteiro, xy é um inteiro par.
+
+
+-Generalização implícita
+Considere a seguinte sentença:
+"Se um inteiro x é divisel por 6,então o dobro de x é divisível por 4"
+Podemos reescrever para tornar o seu conteúdo mais explícito:
+"Para todo inteiro x, se x é divisivel por 6, então o dobro de x é divisível
+por 4".
+
+-Sentença em outro formato
+"O dobro de todo inteiro que é divisível por 6 é divisivel por 4."
+Pode ser reescrito assim:
+"Se um inteiro é divisível por 6,então o dobro é divisivel por 4."
+
+-------------------------------------------------------------------
+	Sentença			|	Justificativa
+-------------------------------------------------------------------
+(2)x = 6n p/ n inteiro			|	...
+(3)x=2*3n				|	...
+(4)2x = 2(2*3n)				|	...
+(5)2x = 4*(3n)				|	...
+-------------------------------------------------------------------
+
+-Provar ou refutar
+Em alguns casos estamos lidando com sentenças que nos parece verdadeira,mas
+que não sabemos se realmente é.
+Podemos provar que é verdadeira ou provar que é falsa,usando contraexemplo
+EX:
+"Para todo inteiro positivo n,vale que n!<=n²"
+FALSO,pois se n = 4, não é verdadeiro
+
+-Prova por exaustão:Analisar todos os casos.
+EX:"Para todo inteiro n entre 1 e 10,se n é divisivel por 6,então n é 
+divisivel por 3."
+---------------
+TABELA VERDADE:
+H C = ?
+V V = V
+V F = F
+F F = V
+F V = V
+----------------
+N=1:Verdadeira
+N=2:Verdadeira
+N=3:Verdadeira
+N=4:Verdadeira
+N=5:Verdadeira
+N=6:Verdadeira
+N=7:Verdadeira
+N=8:Verdadeira
+N=9:Verdadeira
+N=10:Verdadeira
+
+-Prova por contraposição:
+Provar a contrapositiva
+Sentença:"Se H,então C"
+Contrapositiva:"Se não C,então não H"
+EX:"Dado um inteiro n,se o quadrado de n é impar,então n é impar"
+Contrapositiva:"Dado um inteiro n par, então o quadrado de n é par"
+N=2k
+N²=(2k)²
+N²=(2k)(2k)
+N²=2(K2K)
+
+EX:"Se n+1 números foram distribuidos para n estudantes,então algum estudante
+recebeu pelo menos 2 números"
+Contrapositiva:"Se todo estudante recebeu pelo menos 2 números,então não
+foram distribuidos n+1 números"
+
+-Recíproca:
+Sentença:"Se H,então C"
+Recíproca:"Se C,então H"
+A recíproca não é logicamente equivalente a sentença original.
+A sentença pode ser verdadeira,mas a recíproca falsa
+
+EX:
+Sentença:"Se n>5,então n>2"
+Recíproca:"Se n>2, então n>5"
+
+
+-Outras formas de dizer "Se...,então"
+"C se H";
+"H implica C";
+"H somente se C";
+"H => C";
+
+-Sentenças do tipo "...Se e somente se..."
+Operador AND para 2 sentenças.
+
+
+
+
+
+
+
+
+
+
+
+
+
