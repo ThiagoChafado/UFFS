@@ -2,6 +2,6 @@
 gcc -Wall *.c -o main
 
 <h1>Execute:</h1>
-./main <tablename>
+./main 'tablename'
 
 The table output isn't formated
