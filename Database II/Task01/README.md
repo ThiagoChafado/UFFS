@@ -1,7 +1,7 @@
-How to compile:
+#How to compile:
 gcc -Wall *.c -o main
 
-Execute:
+#Execute:
 ./main <tablename>
 
 The table output isn't formated
