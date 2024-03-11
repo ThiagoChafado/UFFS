@@ -27,11 +27,32 @@ int main(int argc, char *argv[])
     }
     fclose(tableFile);
 
-    // printEntryFile(tableFile);
-    // printf("=========\n");
+    tableFile = fopen("table.dic", "r");
+    EntryFile tableStruct = getEntryStruct(tableFile, argv[1]);
 
-    // FILE *attFile = fopen("att.dic","rb");
-    // printPhysicalFile(attFile);
+    fclose(tableFile);
+
+    FILE *attFile = fopen("att.dic", "rb");
+    int numStructs = 0;
+    PhysicFile *physicStruct = getPhysicStruct(attFile, tableStruct.id, &numStructs);
+    char fileName[60];
+    sprintf(fileName, "%s", tableStruct.physicalName);
+    FILE *datFile = fopen(fileName, "rb");
+    if (datFile == NULL){
+        printf("No dat file\n");
+        return 1;
+    }
+
+
+    for (int i = 0; i < numStructs; i++) {
+        printf("%-*s | ", physicStruct[i].attSize, physicStruct[i].attName);
+    }
+    printf("\n");
+
+    fclose(datFile);
+    datFile = fopen(fileName, "rb");
+    printDatFile(datFile, physicStruct, numStructs);
+    fclose(datFile);
 
     return 0;
 }

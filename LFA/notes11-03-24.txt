@@ -1,0 +1,44 @@
+Provar ou refurar:
+Para qualquer numero inteiro positivo,o quadrado deste inteiro é menor 
+ou igual a soma de 10 mais 5 vezes o inteiro.
+
+x² = 10+5x
+p/ x = 5 = verdadeiro
+
+x = 10
+
+10² = 10+5*10
+100 <= 60
+
+FALSO
+=============================================
+
+Provar:
+Para qualquer inteiro positivo menor ou igual a 5, o quadrado deste inteiro
+é menor ou igual a soma de 10 mais 5 vezes o inteiro
+
+x² = 10 + 5x
+x=1 - Verdadeiro
+x=2 - Verdadeiro
+x=3 - Verdadeiro
+x=4 - Verdadeiro
+x=5 - Verdadeiro
+
+VERDADEIRO
+==============================================
+
+Prova por contradição
+Do tipo "Se H e não C,então A" em que A é um absurdo
+
+Ex:Se um numero n adicionado a n resulta em n,entao n = 0
+-> Se um numero n adicionado a n resulta em n e n é diferente de 0,entao 
+n+n = n
+n!=0
+2n=n -> dividindo por n:
+2=1 - Absurdo
+
+==============================================
+
+Conjuntos:
+
+EX: {x | x é um inteiro e 3<x<=7}
