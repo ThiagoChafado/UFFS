@@ -7,6 +7,7 @@ int emptyFile(FILE *file)
     {
         return -1;
     }
+    return 0;
 }
 
 int isOnEntryFile(FILE *file, char *userLogicalName)
@@ -48,19 +49,9 @@ EntryFile getEntryStruct(FILE *file, char *userLogicalName)
             return buffer;
         }
     }
+    return buffer;
 }
 
-PhysicFile *getDatStruct(FILE *file, int id, int *numStructs)
-{
-    PhysicFile *structures = malloc(100 * sizeof(PhysicFile));
-    if (structures == NULL)
-    {
-        printf("Error on malloc!\n");
-        return NULL;
-    }
-    PhysicFile buffer;
-    int i = 0;
-}
 
 PhysicFile *getPhysicStruct(FILE *file, int id, int *numStructs)
 {

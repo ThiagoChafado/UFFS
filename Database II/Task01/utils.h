@@ -38,5 +38,5 @@ EntryFile getEntryStruct(FILE *file,char *userLogicalName);
 //Aux function that returns an array os structs from the physic file
 PhysicFile* getPhysicStruct(FILE *file,int id, int *numStructs);
 
-//Aux function to print data from dat file
+//Aux function to print data from dat file using offset 
 void printDatFile(FILE *file, PhysicFile *datStruct, int numStructs);

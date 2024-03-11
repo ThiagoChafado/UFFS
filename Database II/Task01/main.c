@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     int aux = isOnEntryFile(tableFile, argv[1]);
     if (aux == 0)
     {
-        printf("No table %s\n", argv[1]);
+        printf("No table with name '%s'\n", argv[1]);
         return 1;
     }
     fclose(tableFile);
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     sprintf(fileName, "%s", tableStruct.physicalName);
     FILE *datFile = fopen(fileName, "rb");
     if (datFile == NULL){
-        printf("No dat file\n");
+        printf("No dat file with name '%s'\n",tableStruct.physicalName);
         return 1;
     }
 
