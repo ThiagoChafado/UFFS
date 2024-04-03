@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-
+    //Trying to make a table
     for (int i = 0; i < numStructs; i++) {
         printf("%-*s | ", physicStruct[i].attSize, physicStruct[i].attName);
     }

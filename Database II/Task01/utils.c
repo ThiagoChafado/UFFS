@@ -89,6 +89,7 @@ void printDatFile(FILE *file, PhysicFile *datStruct, int numStructs)
     char *record = malloc(recordSize * sizeof(char));
     while (fread(record, recordSize, 1, file) == 1)
     {
+
         int offset = 0;
         for (int i = 0; i < numStructs; i++)
         {
