@@ -2,6 +2,11 @@ def dfa(m, string):
     q, sigma, delta, q0, f = m
     qA = q0
     for x in string:
+        #Verify " "
+        if(x == ' '):
+            if(qA in f):
+                print('valyd')
+                break
         qA = delta[qA][x]
     return qA in f
 
@@ -39,13 +44,11 @@ delta = {
         'q': 'q40', 'r': 'q40', 's': 'q40', 't': 'q40', 'u': 'q40', 'v': 'q40', 'w': 'q40', 'x': 'q40', 'y': 'q40', 'z': 'q40',
     }
 
-
 }
-
 
 q = ['q0', 'q1', 'q2', 'q3', ]
 f = ['q3', 'q11', 'q23', 'q34', 'q40']
 sigma = ['V', 'A', 'R', 'I', 'F', 'E', 'L', 'S', 'E', 'W', 'H', 'I', 'L', 'E', '+', '-', '*', '/', '==', '>', '<', '>=', '<=', '!=', 'a', 'b', 'c', 'd', 'e', 'f', 'g',
          'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '(', ')', '{', '}']
 
-print(dfa([q, sigma, delta, 'q0', f], 'variavel'))  # True
+print(dfa([q, sigma, delta, 'q0', f], 'variavel '))  # True
